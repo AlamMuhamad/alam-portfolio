@@ -1,19 +1,25 @@
-import React from 'react';
+import React from "react";
 import "./hero.css";
 
-
-export default function Hero() {
+const Hero = () => {
   return (
     <section id="hero" className="hero">
       <div className="hero-content">
-        <img src="/images/34.jpg" alt="Muhammad Alam" className="hero-img" />
-        <h1>Hi, I'm <span>Muhammad Alam</span></h1>
-        <h2>Java & React Developer</h2>
-        <p>
-          I build modern web applications with clean code and strong logic.
+        <img
+          src="/images/34.jpg"  // Use this path directly for public folder
+          alt="Muhammad Alam"
+          className="hero-img"
+        />
+        <h1>Muhammad Alam</h1>
+        <p className="tagline">
+          Full Stack Developer | Java, Spring Boot, React JS | Building modern web apps
         </p>
-        <a href="#projects" className="btn">View My Work</a>
+        <a href="#contact" className="cta-btn">
+          Let’s Connect
+        </a>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;
