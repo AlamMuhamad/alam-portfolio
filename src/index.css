@@ -1,0 +1,7 @@
+html {
+  scroll-behavior: smooth; /* smooth scroll */
+}
+
+section {
+  scroll-margin-top: 80px; /* space for fixed navbar */
+}
