@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import { Camera } from 'lucide-react';
 import { Github, Linkedin, Mail, Facebook, Instagram, Phone } from "lucide-react";
 
 const Footer = () => {
@@ -31,13 +30,13 @@ const Footer = () => {
             <Linkedin size={22} />
           </a>
 
-        <a
-  href="mailto:alambrohi11@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Mail size={22} />
-</a>
+          <a
+            href="mailto:alambrohi11@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Mail size={22} />
+          </a>
 
           <a
             href="https://wa.me/923013214803" 
