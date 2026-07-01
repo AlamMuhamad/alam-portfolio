@@ -1,102 +1,122 @@
 .footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #0f172a; /* Deep Navy to match the dark theme */
   color: white;
   text-align: center;
-  padding: 50px 20px 30px;
-  margin-top: 80px;
+  padding: 60px 20px 30px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
+/* Rainbow line at the top */
 .footer::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+  height: 4px;
+  background: linear-gradient(90deg, #ffdd57, #ff6b6b, #4ecdc4, #45b7d1);
 }
 
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 
 .footer-logo {
-  font-size: 2.2rem;
-  font-weight: 700;
-  background: linear-gradient(45deg, #fff, #ffeaa7);
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ffffff, #ffdd57);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
 .footer-tagline {
-  font-size: 1.1rem;
-  color: #e8f4f8;
-  margin-bottom: 30px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-bottom: 35px;
+  font-weight: 400;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 25px;
+  gap: 15px;
+  margin-bottom: 40px;
 }
 
 .social-links a {
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 12px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Hover Effects */
 .social-links a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Individual hover colors for each social icon */
-.social-links a:nth-child(1):hover { color: #333; background: #fff; } /* GitHub */
-.social-links a:nth-child(2):hover { color: #0077b5; background: #fff; } /* LinkedIn */
-.social-links a:nth-child(3):hover { color: #ea4335; background: #fff; } /* Mail */
-.social-links a:nth-child(4):hover { color: #25d366; background: #fff; } /* WhatsApp */
-.social-links a:nth-child(5):hover { color: #1877f2; background: #fff; } /* Facebook */
-.social-links a:nth-child(6):hover { color: #e4405f; background: #fff; } /* Instagram */
+/* Individual Brand Colors on Hover */
+.social-links a.github:hover { background: #333; border-color: #333; }
+.social-links a.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+.social-links a.mail:hover { background: #ea4335; border-color: #ea4335; }
+.social-links a.whatsapp:hover { background: #25d366; border-color: #25d366; }
+.social-links a.facebook:hover { background: #1877f2; border-color: #1877f2; }
+.social-links a.instagram:hover { background: #e4405f; border-color: #e4405f; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 25px;
+}
 
 .footer-copy {
-  font-size: 0.9rem;
-  color: #b0d4ff;
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-weight: 300;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 400;
 }
 
-/* Optional: Add some subtle animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Floating Back to Top Button */
+.back-to-top {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffdd57;
+  color: #111;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-.footer-content > * {
-  animation: fadeInUp 0.6s ease-out;
+.back-to-top:hover {
+  background: #fff;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .social-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .footer-logo {
+    font-size: 1.6rem;
+  }
 }

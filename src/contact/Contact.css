@@ -2,14 +2,17 @@
   background: linear-gradient(135deg, #141e30, #243b55);
   color: white;
   text-align: center;
-  padding: 70px 20px;
-  border-radius: 20px;
+  padding: 80px 20px;
+  border-radius: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .contact-text {
   font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #eaeaea;
+  margin-bottom: 40px;
+  color: #bdc3c7;
 }
 
 .contact-form {
@@ -22,38 +25,86 @@
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   outline: none;
   font-size: 1rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   color: white;
+  transition: all 0.3s ease;
+}
+
+/* Improve readability of placeholder */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+/* Focus effect: Subtle glow */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffdd57;
+  box-shadow: 0 0 10px rgba(255, 221, 87, 0.2);
 }
 
 .contact-form button {
   background: #ffdd57;
   color: #111;
   font-weight: bold;
+  font-size: 1rem;
   border: none;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
-.contact-form button:hover {
+.contact-form button:hover:not(:disabled) {
   background: #ffd633;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 221, 87, 0.3);
+}
+
+.contact-form button:disabled {
+  background: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Success Message Styling */
+.success-message {
+  animation: fadeIn 0.5s ease-in-out;
+  padding: 40px;
+}
+
+.check-icon {
+  font-size: 3rem;
+  color: #4bb543;
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .contact-info {
-  margin-top: 40px;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 1rem;
-  color: #ccc;
+  color: #aaa;
 }
 
 .contact-info a {
   color: #ffdd57;
   text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
 }
